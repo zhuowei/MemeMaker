@@ -95,13 +95,15 @@
             <objects>
                 <controller id="LQ6-gb-Ip9" customClass="ShareTargetsInterfaceController" customModule="MemeMaker_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Facebook" id="Vt1-tc-3qd"/>
-                        <button width="1" alignment="left" title="Twitter" id="cmG-UE-Ce0"/>
-                        <label alignment="left" text="Label" numberOfLines="0" id="0lg-HJ-fui"/>
+                        <button width="1" alignment="left" title="Twitter" id="cmG-UE-Ce0">
+                            <connections>
+                                <action selector="onShareToTwitter" destination="LQ6-gb-Ip9" id="Ljt-ry-bpN"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Configure sharing in the phone app" numberOfLines="0" id="0lg-HJ-fui"/>
                     </items>
                     <connections>
                         <outlet property="configureSharingLabel" destination="0lg-HJ-fui" id="VsP-VM-b53"/>
-                        <outlet property="facebookButton" destination="Vt1-tc-3qd" id="uEL-ey-DDd"/>
                         <outlet property="twitterButton" destination="cmG-UE-Ce0" id="IhA-0V-R9d"/>
                     </connections>
                 </controller>

@@ -32,6 +32,7 @@
 		C5A7264F1D03DC8E00E8AE8C /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5A7264E1D03DC8E00E8AE8C /* Impact.ttf */; };
 		C5A728171D03E3C700E8AE8C /* meme_images in Resources */ = {isa = PBXBuildFile; fileRef = C5A728161D03E3C700E8AE8C /* meme_images */; };
 		C5CDDC1F1D048E5900330763 /* ShareTargetsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDDC1E1D048E5900330763 /* ShareTargetsInterfaceController.swift */; };
+		C5CDDC211D04AA0300330763 /* WatchConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDDC201D04AA0300330763 /* WatchConfigurationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		C5A7264E1D03DC8E00E8AE8C /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		C5A728161D03E3C700E8AE8C /* meme_images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = meme_images; sourceTree = "<group>"; };
 		C5CDDC1E1D048E5900330763 /* ShareTargetsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTargetsInterfaceController.swift; sourceTree = "<group>"; };
+		C5CDDC201D04AA0300330763 /* WatchConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConfigurationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				C5A725CF1D03AB5D00E8AE8C /* AppDelegate.swift */,
 				C5A725D11D03AB5D00E8AE8C /* ViewController.swift */,
 				C5A725D31D03AB5D00E8AE8C /* Main.storyboard */,
+				C5CDDC201D04AA0300330763 /* WatchConfigurationViewController.swift */,
 				C5A725D61D03AB5D00E8AE8C /* Assets.xcassets */,
 				C5A725D81D03AB5D00E8AE8C /* LaunchScreen.storyboard */,
 				C5A725DB1D03AB5D00E8AE8C /* Info.plist */,
@@ -416,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CDDC211D04AA0300330763 /* WatchConfigurationViewController.swift in Sources */,
 				C5A725D21D03AB5D00E8AE8C /* ViewController.swift in Sources */,
 				C5A725D01D03AB5D00E8AE8C /* AppDelegate.swift in Sources */,
 			);

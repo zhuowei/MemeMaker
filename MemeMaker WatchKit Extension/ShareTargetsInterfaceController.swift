@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import UIKit
 
 class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate {
 
@@ -27,27 +28,34 @@ class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        updateShareOptions()
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    @IBAction func onShareToFacebook() {
+        shareImage("facebook")
+    }
     
-    func updateShareOptions() {
-        self.facebookButton.setEnabled(false)
-        self.twitterButton.setEnabled(false)
-        self.configureSharingLabel.setText("Loading sharing options")
+    @IBAction func onShareToTwitter() {
+        shareImage("twitter")
+    }
+    
+    func shareImage(serviceName: String) {
+        self.configureSharingLabel.setText("Sharing")
         let session = WCSession.defaultSession()
         session.delegate = self
         if (session.activationState != .Activated) {
             session.activateSession()
         }
-        session.sendMessage(["r": "getSharingOptions"], replyHandler: { retval in
-            self.facebookButton.setEnabled(retval["facebook"] as! Bool)
-            self.twitterButton.setEnabled(retval["twitter"] as! Bool)
-            self.configureSharingLabel.setText("Configure sharing options in the phone app")
+        session.sendMessage(["r": "share", "s": serviceName, "i": UIImageJPEGRepresentation(self.memeImg, 0.9)!], replyHandler: { retval in
+            let success = retval["success"] as! Bool
+            if (!success) {
+                self.configureSharingLabel.setText("Can't share to " + serviceName + ": go to the phone app and enable sharing")
+            } else {
+                self.configureSharingLabel.setText("Shared to " + serviceName)
+            }
         }, errorHandler: {err in
             print(err);
             self.configureSharingLabel.setText("Can't share: not connected to phone")
