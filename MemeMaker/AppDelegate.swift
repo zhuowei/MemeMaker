@@ -62,12 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
                 assert(false, "invalid account type " + typeName)
                 abort()
             }
-            let theAccount = accountStore.accountsWithAccountType(type)?[0]
+            let accounts = accountStore.accountsWithAccountType(type)
+            let theAccount:ACAccount! = (accounts != nil && accounts!.count > 0) ? accounts![0] as! ACAccount : nil
             if (theAccount == nil) {
                 replyHandler(["success": false])
                 return
             }
-            postWithSocialAccount(theAccount as! ACAccount, imageData: message["i"] as! NSData, imageType: "image/jpeg") { error in
+            postWithSocialAccount(theAccount, imageData: message["i"] as! NSData, imageType: "image/jpeg") { error in
                 print("social post done with error ", error)
                 replyHandler(["success": error == nil])
             }

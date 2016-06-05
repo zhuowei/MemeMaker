@@ -30,8 +30,8 @@ class WatchConfigurationViewController: UIViewController {
         accountStore.requestAccessToAccountsWithType(type, options: nil) { granted, error in
             let alert: UIAlertController
             if (granted) {
-                let theAccount = accountStore.accountsWithAccountType(type)?[0]
-                let message = theAccount != nil ? "You can now create memes from your watch and share them to your Twitter account" : "Next, add a Twitter account in your Phone's settings"
+                let accounts = accountStore.accountsWithAccountType(type)
+                let message = (accounts != nil && accounts.count > 0) ? "You can now create memes from your watch and share them to your Twitter account" : "To share from your watch, add a Twitter account in your Phone's settings"
                 alert = UIAlertController(title: "Twitter access granted", message: message,
                     preferredStyle: .Alert)
             } else {
