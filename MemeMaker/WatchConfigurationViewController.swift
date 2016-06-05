@@ -8,6 +8,7 @@
 
 import UIKit
 import Accounts
+import Photos
 
 class WatchConfigurationViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class WatchConfigurationViewController: UIViewController {
             let alert: UIAlertController
             if (granted) {
                 let accounts = accountStore.accountsWithAccountType(type)
-                let message = (accounts != nil && accounts.count > 0) ? "You can now create memes from your watch and share them to your Twitter account" : "To share from your watch, add a Twitter account in your Phone's settings"
+                let message = (accounts != nil && accounts.count > 0) ? "You can now create memes from your watch and share them to your Twitter account." : "To share from your watch, add a Twitter account in your Phone's settings."
                 alert = UIAlertController(title: "Twitter access granted", message: message,
                     preferredStyle: .Alert)
             } else {
@@ -43,5 +44,20 @@ class WatchConfigurationViewController: UIViewController {
             })
         }
     }
-
+    
+    @IBAction func onAuthPhotosTapped() {
+        PHPhotoLibrary.requestAuthorization() { status in
+            let alert: UIAlertController
+            if (status == .Authorized) {
+                alert = UIAlertController(title: "Photos access granted", message: "You can now save memes from your watch to your camera roll.",
+                    preferredStyle: .Alert)
+            } else {
+                alert = UIAlertController(title: "Photo access denied", message: "Failed to get access to your camera roll. Go to Settings -> MemeMaker on your phone to grant access.", preferredStyle: .Alert)
+            }
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            dispatch_async(dispatch_get_main_queue(), {
+                self.presentViewController(alert, animated: true, completion: nil)
+            })
+        }
+    }
 }

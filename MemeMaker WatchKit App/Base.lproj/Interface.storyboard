@@ -95,15 +95,26 @@
             <objects>
                 <controller id="LQ6-gb-Ip9" customClass="ShareTargetsInterfaceController" customModule="MemeMaker_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Twitter" id="cmG-UE-Ce0">
-                            <connections>
-                                <action selector="onShareToTwitter" destination="LQ6-gb-Ip9" id="Ljt-ry-bpN"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" layout="vertical" id="rgO-HT-nZO">
+                            <items>
+                                <button width="1" alignment="left" title="Twitter" id="cmG-UE-Ce0">
+                                    <connections>
+                                        <action selector="onShareToTwitter" destination="LQ6-gb-Ip9" id="Ljt-ry-bpN"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Save to Photos" id="45z-LI-BT6">
+                                    <connections>
+                                        <action selector="onShareToPhotos" destination="LQ6-gb-Ip9" id="7qZ-3X-ivh"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <label alignment="left" text="Configure sharing in the phone app" numberOfLines="0" id="0lg-HJ-fui"/>
                     </items>
                     <connections>
                         <outlet property="configureSharingLabel" destination="0lg-HJ-fui" id="VsP-VM-b53"/>
+                        <outlet property="saveImageButton" destination="45z-LI-BT6" id="1DO-J7-YQ9"/>
+                        <outlet property="shareTargetsGroup" destination="rgO-HT-nZO" id="vpY-dR-nFQ"/>
                         <outlet property="twitterButton" destination="cmG-UE-Ce0" id="IhA-0V-R9d"/>
                     </connections>
                 </controller>

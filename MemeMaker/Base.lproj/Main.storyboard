@@ -208,15 +208,34 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give access to Photos to save memes from your watch to your Camera Roll" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-T5-kwF">
+                                <rect key="frame" x="0.0" y="131" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92n-h2-3bJ">
+                                <rect key="frame" x="0.0" y="160" width="600" height="30"/>
+                                <state key="normal" title="Grant Access to Photos"/>
+                                <connections>
+                                    <action selector="onAuthPhotosTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="51p-x5-lYz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ozi-uF-agJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2WR-Xh-Cdd"/>
                             <constraint firstAttribute="trailing" secondItem="Ozi-uF-agJ" secondAttribute="trailing" id="62J-18-QTV"/>
                             <constraint firstItem="oTx-Kt-giu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="89R-fz-XTg"/>
+                            <constraint firstAttribute="trailing" secondItem="92n-h2-3bJ" secondAttribute="trailing" id="DpO-WU-3VS"/>
+                            <constraint firstItem="92n-h2-3bJ" firstAttribute="top" secondItem="CTo-T5-kwF" secondAttribute="bottom" constant="8" id="Pwa-df-avb"/>
+                            <constraint firstItem="CTo-T5-kwF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="auM-yk-XmW"/>
+                            <constraint firstItem="CTo-T5-kwF" firstAttribute="top" secondItem="Ozi-uF-agJ" secondAttribute="bottom" constant="8" id="f4p-Ed-qUn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oTx-Kt-giu" secondAttribute="trailing" constant="8" id="jRp-AO-iAY"/>
                             <constraint firstItem="oTx-Kt-giu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ldb-XX-aFj"/>
+                            <constraint firstAttribute="trailing" secondItem="CTo-T5-kwF" secondAttribute="trailing" id="o2W-mW-3mB"/>
                             <constraint firstItem="Ozi-uF-agJ" firstAttribute="top" secondItem="oTx-Kt-giu" secondAttribute="bottom" id="qcm-6V-M5e"/>
+                            <constraint firstItem="92n-h2-3bJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ybq-Vr-3OO"/>
                         </constraints>
                     </view>
                 </viewController>

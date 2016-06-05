@@ -16,6 +16,8 @@ class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate 
     var memeImg:UIImage!
     @IBOutlet var facebookButton:WKInterfaceButton!
     @IBOutlet var twitterButton:WKInterfaceButton!
+    @IBOutlet var saveImageButton:WKInterfaceButton!
+    @IBOutlet var shareTargetsGroup:WKInterfaceGroup!
     @IBOutlet var configureSharingLabel:WKInterfaceLabel!
 
     override func awakeWithContext(context: AnyObject?) {
@@ -42,8 +44,16 @@ class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate 
         shareImage("twitter")
     }
     
+    @IBAction func onShareToPhotos() {
+        shareImage("photos")
+    }
+    
     func shareImage(serviceName: String) {
         self.configureSharingLabel.setText("Sharing")
+        animateWithDuration(1.0) {
+            self.shareTargetsGroup.setHeight(0)
+            self.shareTargetsGroup.setAlpha(0)
+        }
         let session = WCSession.defaultSession()
         session.delegate = self
         if (session.activationState != .Activated) {
@@ -55,6 +65,10 @@ class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate 
                 self.configureSharingLabel.setText("Can't share to " + serviceName + ": go to the phone app and enable sharing")
             } else {
                 self.configureSharingLabel.setText("Shared to " + serviceName)
+            }
+            self.animateWithDuration(1.0) {
+                self.shareTargetsGroup.sizeToFitHeight()
+                self.shareTargetsGroup.setAlpha(1)
             }
         }, errorHandler: {err in
             print(err);

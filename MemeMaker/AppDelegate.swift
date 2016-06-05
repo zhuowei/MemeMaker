@@ -10,6 +10,7 @@ import UIKit
 import WatchConnectivity
 import Accounts
 import Social
+import Photos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
@@ -54,10 +55,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             let accountStore = ACAccountStore()
             let type:ACAccountType
             let typeName:String = message["s"] as! String
+            let imageData = message["i"] as! NSData
             if (typeName == "facebook") {
                 type = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
             } else if (typeName == "twitter") {
                 type = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+            } else if (typeName == "photos") {
+                saveToPhotos(imageData, imageType: "image/jpeg") { err in
+                    print("saved to photos", err)
+                    replyHandler(["success": err == nil])
+                }
+                return
             } else {
                 assert(false, "invalid account type " + typeName)
                 abort()
@@ -68,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
                 replyHandler(["success": false])
                 return
             }
-            postWithSocialAccount(theAccount, imageData: message["i"] as! NSData, imageType: "image/jpeg") { error in
+            postWithSocialAccount(theAccount, imageData: imageData, imageType: "image/jpeg") { error in
                 print("social post done with error ", error)
                 replyHandler(["success": error == nil])
             }
@@ -112,6 +120,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         } else {
             abort()
         }
+    }
+    
+    func saveToPhotos(imageData: NSData, imageType: String, completion: (NSError?) -> Void) {
+        let photos = PHPhotoLibrary.sharedPhotoLibrary()
+        photos.performChanges({
+            PHAssetCreationRequest.creationRequestForAsset().addResourceWithType(.Photo, data: imageData, options: nil)
+        }, completionHandler: { success, err in
+            completion(err)
+        })
     }
 
 }
