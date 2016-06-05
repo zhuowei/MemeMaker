@@ -31,6 +31,7 @@
 		C5A7264D1D03DC8700E8AE8C /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5A7264C1D03DC8700E8AE8C /* Impact.ttf */; };
 		C5A7264F1D03DC8E00E8AE8C /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5A7264E1D03DC8E00E8AE8C /* Impact.ttf */; };
 		C5A728171D03E3C700E8AE8C /* meme_images in Resources */ = {isa = PBXBuildFile; fileRef = C5A728161D03E3C700E8AE8C /* meme_images */; };
+		C5CDDC1F1D048E5900330763 /* ShareTargetsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDDC1E1D048E5900330763 /* ShareTargetsInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		C5A7264C1D03DC8700E8AE8C /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		C5A7264E1D03DC8E00E8AE8C /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		C5A728161D03E3C700E8AE8C /* meme_images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = meme_images; sourceTree = "<group>"; };
+		C5CDDC1E1D048E5900330763 /* ShareTargetsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTargetsInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				C5A7263F1D03C4F900E8AE8C /* CaptionInterfaceController.swift */,
 				C5A726201D03B8DE00E8AE8C /* MemeListRowController.swift */,
 				C5A726411D03CDD900E8AE8C /* ShareInterfaceController.swift */,
+				C5CDDC1E1D048E5900330763 /* ShareTargetsInterfaceController.swift */,
 				C5A725F41D03AB5D00E8AE8C /* ExtensionDelegate.swift */,
 				C5A725F61D03AB5D00E8AE8C /* Assets.xcassets */,
 				C5A725F81D03AB5D00E8AE8C /* Info.plist */,
@@ -426,6 +429,7 @@
 				C5A726421D03CDD900E8AE8C /* ShareInterfaceController.swift in Sources */,
 				C5A725F51D03AB5D00E8AE8C /* ExtensionDelegate.swift in Sources */,
 				C5A726211D03B8DE00E8AE8C /* MemeListRowController.swift in Sources */,
+				C5CDDC1F1D048E5900330763 /* ShareTargetsInterfaceController.swift in Sources */,
 				C5A725F31D03AB5D00E8AE8C /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,6 +755,7 @@
 				C5A7263A1D03BEC600E8AE8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

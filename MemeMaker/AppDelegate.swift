@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import WatchConnectivity
+import Accounts
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let session = WCSession.defaultSession()
+        session.delegate = self
+        session.activateSession()
         return true
     }
 
@@ -40,7 +45,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        print("received request from watch!", message)
+        let method = (message["r"] as! String)
+        if method == "getSharingOptions" {
+            let accountStore = ACAccountStore()
+            
+            let facebookType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
+            let twitterType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
 
+            let hasFacebook = (accountStore.accountsWithAccountType(facebookType)?.count ?? 0) != 0
+            let hasTwitter = (accountStore.accountsWithAccountType(twitterType)?.count ?? 0) != 0
+            print(facebookType, twitterType)
+            
+            replyHandler(["facebook": hasFacebook, "twitter": hasTwitter])
+        } else {
+            assert(false, "invalid request method " + method)
+        }
+    }
 
 }
 

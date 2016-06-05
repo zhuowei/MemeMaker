@@ -35,4 +35,7 @@ class ShareInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        return memeImage
+    }
 }

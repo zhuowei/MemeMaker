@@ -17,10 +17,10 @@ public class GenerateMemeImage {
     public static func memeImageForMeme(meme: MemeList, topText: String, bottomText: String) -> UIImage {
         let filePath = NSBundle(forClass: self).pathForResource(meme.id, ofType: "jpg", inDirectory: "meme_images")!
         let image = UIImage(contentsOfFile: filePath)!
-        let size = image.size
+        let size = CGSizeMake(500, image.size.height * (500 / image.size.width))
         let vertMargin:CGFloat = 0
         UIGraphicsBeginImageContext(size)//image.size)
-        image.drawAtPoint(CGPointZero)
+        image.drawInRect(CGRectMake(0, 0, size.width, size.height))
         //http://stackoverflow.com/questions/31344787/uilabel-text-multi-line-given-width-of-text
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .ByWordWrapping
