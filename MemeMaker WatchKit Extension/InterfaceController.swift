@@ -35,8 +35,8 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        print("Table selected", rowIndex);
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        return rowIndex
     }
 
 }

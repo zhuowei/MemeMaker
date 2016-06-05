@@ -17,6 +17,9 @@
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="kg6-9B-RV5"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="nyP-up-HoL" kind="push" id="aT0-pY-ngr"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="nameLabel" destination="kg6-9B-RV5" id="FzO-6e-OqH"/>
@@ -30,6 +33,50 @@
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--Caption Interface Controller-->
+        <scene sceneID="cea-VE-VhO">
+            <objects>
+                <controller id="nyP-up-HoL" customClass="CaptionInterfaceController" customModule="MemeMaker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Edit text" id="8cr-39-eGh"/>
+                        <button width="1" alignment="left" title="Top" id="RPC-Ri-Ohu">
+                            <connections>
+                                <action selector="editTopText" destination="nyP-up-HoL" id="eUq-JC-T9l"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Bottom" id="82C-Dw-Iuu">
+                            <connections>
+                                <action selector="editBottomText" destination="nyP-up-HoL" id="h9b-kl-Ymr"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Generate" id="Jhm-OU-UeJ">
+                            <connections>
+                                <segue destination="agA-Ig-ZhJ" kind="push" id="T2r-ML-dB1"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="bottomButton" destination="82C-Dw-Iuu" id="vw6-5P-2Z9"/>
+                        <outlet property="topButton" destination="RPC-Ri-Ohu" id="VLC-fi-K8D"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="278" y="503"/>
+        </scene>
+        <!--Share Interface Controller-->
+        <scene sceneID="Vhb-bA-zDK">
+            <objects>
+                <controller id="agA-Ig-ZhJ" customClass="ShareInterfaceController" customModule="MemeMaker_WatchKit_Extension">
+                    <items>
+                        <button width="1" height="1" alignment="left" title="Button" id="VPC-ne-cyO"/>
+                    </items>
+                    <connections>
+                        <outlet property="shareButton" destination="VPC-ne-cyO" id="x8b-lE-PTv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="277" y="761"/>
         </scene>
     </scenes>
 </document>
