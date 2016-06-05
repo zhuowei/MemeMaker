@@ -8,9 +8,11 @@
 
 import WatchKit
 import Foundation
+import MemeMakerKit
 
 class ShareInterfaceController: WKInterfaceController {
     @IBOutlet var shareButton:WKInterfaceButton!
+    var memeImage:UIImage!
 
     override func awakeWithContext(context: AnyObject!) {
         super.awakeWithContext(context)
@@ -19,6 +21,8 @@ class ShareInterfaceController: WKInterfaceController {
         let memeId = context[0] as! Int
         let topText = context[1] as! String
         let bottomText = context[2] as! String
+        self.memeImage = GenerateMemeImage.memeImageForMeme(MemeList.memes[memeId], topText: topText, bottomText: bottomText)
+        self.shareButton.setBackgroundImage(memeImage)
     }
 
     override func willActivate() {

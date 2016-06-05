@@ -4,6 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Impact.ttf">
+            <string>Impact</string>
+            <string>Impact</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -41,11 +47,13 @@
                     <items>
                         <label alignment="left" text="Edit text" id="8cr-39-eGh"/>
                         <button width="1" alignment="left" title="Top" id="RPC-Ri-Ohu">
+                            <fontDescription key="font" name="Impact" family="Impact" pointSize="15"/>
                             <connections>
                                 <action selector="editTopText" destination="nyP-up-HoL" id="eUq-JC-T9l"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Bottom" id="82C-Dw-Iuu">
+                            <fontDescription key="font" name="Impact" family="Impact" pointSize="15"/>
                             <connections>
                                 <action selector="editBottomText" destination="nyP-up-HoL" id="h9b-kl-Ymr"/>
                             </connections>
@@ -69,7 +77,7 @@
             <objects>
                 <controller id="agA-Ig-ZhJ" customClass="ShareInterfaceController" customModule="MemeMaker_WatchKit_Extension">
                     <items>
-                        <button width="1" height="1" alignment="left" title="Button" id="VPC-ne-cyO"/>
+                        <button width="1" height="1" alignment="left" title="Share" id="VPC-ne-cyO"/>
                     </items>
                     <connections>
                         <outlet property="shareButton" destination="VPC-ne-cyO" id="x8b-lE-PTv"/>
