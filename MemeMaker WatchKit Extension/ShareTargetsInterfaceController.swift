@@ -59,7 +59,7 @@ class ShareTargetsInterfaceController: WKInterfaceController, WCSessionDelegate 
         if (session.activationState != .Activated) {
             session.activateSession()
         }
-        session.sendMessage(["r": "share", "s": serviceName, "i": UIImageJPEGRepresentation(self.memeImg, 0.9)!], replyHandler: { retval in
+        session.sendMessage(["r": "share", "s": serviceName, "i": UIImageJPEGRepresentation(self.memeImg, 0.8)!], replyHandler: { retval in
             let success = retval["success"] as! Bool
             if (!success) {
                 self.configureSharingLabel.setText("Can't share to " + serviceName + ": go to the phone app and enable sharing")
