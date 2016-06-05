@@ -6,7 +6,7 @@
 //  Copyright © 2016 Zhuowei Zhang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <WatchKit/WatchKit.h>
 
 //! Project version number for MemeMakerKit.
 FOUNDATION_EXPORT double MemeMakerKitVersionNumber;

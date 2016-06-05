@@ -19,6 +19,12 @@
 		C5A725F31D03AB5D00E8AE8C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A725F21D03AB5D00E8AE8C /* InterfaceController.swift */; };
 		C5A725F51D03AB5D00E8AE8C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A725F41D03AB5D00E8AE8C /* ExtensionDelegate.swift */; };
 		C5A725F71D03AB5D00E8AE8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A725F61D03AB5D00E8AE8C /* Assets.xcassets */; };
+		C5A726211D03B8DE00E8AE8C /* MemeListRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A726201D03B8DE00E8AE8C /* MemeListRowController.swift */; };
+		C5A726321D03BEC600E8AE8C /* MemeMakerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C5A726311D03BEC600E8AE8C /* MemeMakerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5A726361D03BEC600E8AE8C /* MemeMakerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A7262F1D03BEC600E8AE8C /* MemeMakerKit.framework */; };
+		C5A726371D03BEC600E8AE8C /* MemeMakerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5A7262F1D03BEC600E8AE8C /* MemeMakerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5A7263D1D03BEEE00E8AE8C /* MemeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7263B1D03BEEE00E8AE8C /* MemeList.swift */; };
+		C5A7263E1D03BEEE00E8AE8C /* memes.json in Resources */ = {isa = PBXBuildFile; fileRef = C5A7263C1D03BEEE00E8AE8C /* memes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C5A725EC1D03AB5D00E8AE8C;
 			remoteInfo = "MemeMaker WatchKit Extension";
+		};
+		C5A726341D03BEC600E8AE8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5A725C41D03AB5D00E8AE8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5A7262E1D03BEC600E8AE8C;
+			remoteInfo = MemeMakerKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,6 +74,27 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5A726171D03ACB100E8AE8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5A726291D03BCD300E8AE8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C5A726371D03BEC600E8AE8C /* MemeMakerKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +114,12 @@
 		C5A725F41D03AB5D00E8AE8C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		C5A725F61D03AB5D00E8AE8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5A725F81D03AB5D00E8AE8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5A726201D03B8DE00E8AE8C /* MemeListRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeListRowController.swift; sourceTree = "<group>"; };
+		C5A7262F1D03BEC600E8AE8C /* MemeMakerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MemeMakerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5A726311D03BEC600E8AE8C /* MemeMakerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemeMakerKit.h; sourceTree = "<group>"; };
+		C5A726331D03BEC600E8AE8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5A7263B1D03BEEE00E8AE8C /* MemeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeList.swift; sourceTree = "<group>"; };
+		C5A7263C1D03BEEE00E8AE8C /* memes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = memes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +131,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C5A725EA1D03AB5D00E8AE8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A726361D03BEC600E8AE8C /* MemeMakerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5A7262B1D03BEC600E8AE8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,6 +154,7 @@
 				C5A725CE1D03AB5D00E8AE8C /* MemeMaker */,
 				C5A725E21D03AB5D00E8AE8C /* MemeMaker WatchKit App */,
 				C5A725F11D03AB5D00E8AE8C /* MemeMaker WatchKit Extension */,
+				C5A726301D03BEC600E8AE8C /* MemeMakerKit */,
 				C5A725CD1D03AB5D00E8AE8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +165,7 @@
 				C5A725CC1D03AB5D00E8AE8C /* MemeMaker.app */,
 				C5A725DE1D03AB5D00E8AE8C /* MemeMaker WatchKit App.app */,
 				C5A725ED1D03AB5D00E8AE8C /* MemeMaker WatchKit Extension.appex */,
+				C5A7262F1D03BEC600E8AE8C /* MemeMakerKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C5A725F21D03AB5D00E8AE8C /* InterfaceController.swift */,
+				C5A726201D03B8DE00E8AE8C /* MemeListRowController.swift */,
 				C5A725F41D03AB5D00E8AE8C /* ExtensionDelegate.swift */,
 				C5A725F61D03AB5D00E8AE8C /* Assets.xcassets */,
 				C5A725F81D03AB5D00E8AE8C /* Info.plist */,
@@ -154,7 +205,29 @@
 			path = "MemeMaker WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		C5A726301D03BEC600E8AE8C /* MemeMakerKit */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7263B1D03BEEE00E8AE8C /* MemeList.swift */,
+				C5A7263C1D03BEEE00E8AE8C /* memes.json */,
+				C5A726311D03BEC600E8AE8C /* MemeMakerKit.h */,
+				C5A726331D03BEC600E8AE8C /* Info.plist */,
+			);
+			path = MemeMakerKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C5A7262C1D03BEC600E8AE8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A726321D03BEC600E8AE8C /* MemeMakerKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C5A725CB1D03AB5D00E8AE8C /* MemeMaker */ = {
@@ -165,6 +238,7 @@
 				C5A725C91D03AB5D00E8AE8C /* Frameworks */,
 				C5A725CA1D03AB5D00E8AE8C /* Resources */,
 				C5A726021D03AB5D00E8AE8C /* Embed Watch Content */,
+				C5A726171D03ACB100E8AE8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,15 +274,35 @@
 				C5A725E91D03AB5D00E8AE8C /* Sources */,
 				C5A725EA1D03AB5D00E8AE8C /* Frameworks */,
 				C5A725EB1D03AB5D00E8AE8C /* Resources */,
+				C5A726291D03BCD300E8AE8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C5A726351D03BEC600E8AE8C /* PBXTargetDependency */,
 			);
 			name = "MemeMaker WatchKit Extension";
 			productName = "MemeMaker WatchKit Extension";
 			productReference = C5A725ED1D03AB5D00E8AE8C /* MemeMaker WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		C5A7262E1D03BEC600E8AE8C /* MemeMakerKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5A726381D03BEC600E8AE8C /* Build configuration list for PBXNativeTarget "MemeMakerKit" */;
+			buildPhases = (
+				C5A7262A1D03BEC600E8AE8C /* Sources */,
+				C5A7262B1D03BEC600E8AE8C /* Frameworks */,
+				C5A7262C1D03BEC600E8AE8C /* Headers */,
+				C5A7262D1D03BEC600E8AE8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MemeMakerKit;
+			productName = MemeMakerKit;
+			productReference = C5A7262F1D03BEC600E8AE8C /* MemeMakerKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -229,6 +323,9 @@
 					C5A725EC1D03AB5D00E8AE8C = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					C5A7262E1D03BEC600E8AE8C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = C5A725C71D03AB5D00E8AE8C /* Build configuration list for PBXProject "MemeMaker" */;
@@ -247,6 +344,7 @@
 				C5A725CB1D03AB5D00E8AE8C /* MemeMaker */,
 				C5A725DD1D03AB5D00E8AE8C /* MemeMaker WatchKit App */,
 				C5A725EC1D03AB5D00E8AE8C /* MemeMaker WatchKit Extension */,
+				C5A7262E1D03BEC600E8AE8C /* MemeMakerKit */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +377,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5A7262D1D03BEC600E8AE8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A7263E1D03BEEE00E8AE8C /* memes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -296,7 +402,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5A725F51D03AB5D00E8AE8C /* ExtensionDelegate.swift in Sources */,
+				C5A726211D03B8DE00E8AE8C /* MemeListRowController.swift in Sources */,
 				C5A725F31D03AB5D00E8AE8C /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5A7262A1D03BEC600E8AE8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A7263D1D03BEEE00E8AE8C /* MemeList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = C5A725EC1D03AB5D00E8AE8C /* MemeMaker WatchKit Extension */;
 			targetProxy = C5A725EF1D03AB5D00E8AE8C /* PBXContainerItemProxy */;
+		};
+		C5A726351D03BEC600E8AE8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5A7262E1D03BEC600E8AE8C /* MemeMakerKit */;
+			targetProxy = C5A726341D03BEC600E8AE8C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,6 +551,7 @@
 		C5A725FC1D03AB5D00E8AE8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "MemeMaker WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.zhuoweizhang.MemeMaker.watchkitapp.watchkitextension;
@@ -445,6 +566,7 @@
 		C5A725FD1D03AB5D00E8AE8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "MemeMaker WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.zhuoweizhang.MemeMaker.watchkitapp.watchkitextension;
@@ -510,6 +632,55 @@
 			};
 			name = Release;
 		};
+		C5A726391D03BEC600E8AE8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MemeMakerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.zhuoweizhang.MemeMakerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		C5A7263A1D03BEC600E8AE8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MemeMakerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.zhuoweizhang.MemeMakerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -529,6 +700,7 @@
 				C5A725FD1D03AB5D00E8AE8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5A725FF1D03AB5D00E8AE8C /* Build configuration list for PBXNativeTarget "MemeMaker WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -537,12 +709,22 @@
 				C5A726011D03AB5D00E8AE8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5A726031D03AB5D00E8AE8C /* Build configuration list for PBXNativeTarget "MemeMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C5A726041D03AB5D00E8AE8C /* Debug */,
 				C5A726051D03AB5D00E8AE8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5A726381D03BEC600E8AE8C /* Build configuration list for PBXNativeTarget "MemeMakerKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5A726391D03BEC600E8AE8C /* Debug */,
+				C5A7263A1D03BEC600E8AE8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

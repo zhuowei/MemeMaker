@@ -8,14 +8,21 @@
 
 import WatchKit
 import Foundation
-
+import MemeMakerKit
 
 class InterfaceController: WKInterfaceController {
+
+    @IBOutlet var table: WKInterfaceTable!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        self.table.setNumberOfRows(MemeList.memes.count, withRowType: "MemeListRow")
+        for (i, meme) in MemeList.memes.enumerate() {
+            let controller = self.table.rowControllerAtIndex(i) as! MemeListRowController
+            controller.meme = meme
+        }
     }
 
     override func willActivate() {
@@ -26,6 +33,10 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        print("Table selected", rowIndex);
     }
 
 }
