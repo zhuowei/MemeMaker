@@ -15,8 +15,8 @@ class CaptionInterfaceController: WKInterfaceController {
     var memeId:Int!
     @IBOutlet var topButton:WKInterfaceButton!
     @IBOutlet var bottomButton:WKInterfaceButton!
-    var topText:String = "Top"
-    var bottomText:String = "Bottom"
+    var topText:NSMutableString = "Top"
+    var bottomText:NSMutableString = "Bottom"
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -35,22 +35,22 @@ class CaptionInterfaceController: WKInterfaceController {
     }
     
     @IBAction func editTopText() {
-        editTheText(self.topButton, stringVar: &self.topText)
+        editTheText(self.topButton, stringVar: self.topText)
     }
     @IBAction func editBottomText() {
-        editTheText(self.bottomButton, stringVar: &self.bottomText)
+        editTheText(self.bottomButton, stringVar: self.bottomText)
     }
     
-    func editTheText(sender:WKInterfaceButton, inout stringVar:String) {
+    func editTheText(sender:WKInterfaceButton, stringVar:NSMutableString) {
         //https://www.natashatherobot.com/watchkit-text-input-dictation-api/
         let sampleTexts = ["Sample text for simulator", "because mic doesn't work"]
         presentTextInputControllerWithSuggestions(sampleTexts, allowedInputMode: .AllowEmoji) { input in
+            var outText:String = ""
             if input != nil && input!.count > 0 && input![0] is String {
-                stringVar = (input![0] as! String)
-            } else {
-                stringVar = ""
+                outText = (input![0] as! String)
             }
-            sender.setTitle(stringVar)
+            sender.setTitle(outText)
+            stringVar.setString(outText)
         }
     }
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
